@@ -20,7 +20,7 @@ if(empty($errors)){
 }else{
     $msg_box = "";
     foreach($errors as $one_error){
-        $msg_box .= "<span style='color: red;/>$one_error</span><br/>";
+        $msg_box .= "<span style='color: red;'>$one_error</span><br/>";
     }
 }
 
