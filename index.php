@@ -5,8 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sennding letters by email</title>
     <link rel="stylesheet" href="style.css">
-</head>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js" type="javascript"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js" type="javascript"></script>
 <script>
     $(document).ready(function(){  
         $('#btn_submit').click(function(){   // to commit a click on a buton
@@ -59,6 +58,8 @@
         });
     });
 </script>
+</head>
+
 
 <body>
     <div class="container">
