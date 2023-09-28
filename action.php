@@ -9,3 +9,17 @@ if(($_POST['user_phone'] == "") || strlen($_POST['user_phone']) <12 ){
     $errors[] = "Поле номер телефона не корректно!";
 }
 if($_POST['text_comment'] == "") $errors[] = "Поле текст не заполнено!";
+
+if(empty($errors)){
+    $messange = "ФИО пользователя: " . $_POST['user_name'] . "<br/>";
+    $messange = "Email пользователя: " . $_POST['user_email'] . "<br/>";
+    $messange = "Номер тедефона пользователя: " . $_POST['user_phone'] . "<br/>";
+    $messange = "Текст письма пользователя: " . $_POST['text_comment'];
+    send_mail($messange);
+    $msg_box = "<span style='color: green:'>Сообщение успешно отправлено!</span>";
+}else{
+    $msg_box = "";
+    foreach($errors as $one_error){
+        $msg_box .= "<span style='color: red;/>$one_error</span><br/>";
+    }
+}
