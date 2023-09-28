@@ -6,6 +6,44 @@
     <title>Sennding letters by email</title>
     <link rel="stylesheet" href="style.css">
 </head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js" type="javascript"></script>
+<script>
+    $(document).ready(function(){  
+        $('#btn_submit').click(function(){   // to commit a click on a buton
+            var user_name = $('#user_name').val(); //to get value user
+            var user_email = $('#user_email').val();
+            var user_phone = $('#user_phone').val();
+            var text_comment = $('#text_comment').val();
+            var re_em = /^[\w-\.]+@[\w-]+\.[a+z]{2,4}$/i; //regular expression for email
+            var ru_nu = /^[\d\+][\d\(\)\ -]{10,14}\d$/;  //regular expression for phone
+
+            if(user_name == ''){
+                document.getElementById('user_name').style.borderColor = 'red';
+            }else{
+                document.getElementById('user_name').style.borderColor = 'green';
+            }
+
+            if(user_email == '' || !re_em.test(user_email)){
+                document.getElementById('user_email').style.borderColor = 'red';
+            }else{
+                document.getElementById('user_email').style.borderColor = 'green';
+            }
+
+            if(user_phone == ''|| !re_nu(user-phone)){
+                document.getElementById('user_phone').style.borderColor = 'red';
+            }else{
+                document.getElementById('user_phone').style.borderColor = 'green';
+            }
+
+            if(text-comment == ''){
+                document.getElementById('text-comment').style.borderColor = 'red';
+            }else{
+                document.getElementById('text-comment').style.borderColor = 'green';
+            }
+        });
+    });
+</script>
+
 <body>
     <div class="container">
         <div class="left">
