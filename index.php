@@ -40,6 +40,22 @@
             }else{
                 document.getElementById('text-comment').style.borderColor = 'green';
             }
+
+            $.ajax({
+                url: "action_php",
+                type: "post",
+                dataType: "json",
+                data: {
+                    "user_name": user_name,
+                    "user_email": user_email,
+                    "user-phone": user_phone,
+                    "text_comment": text_comment
+                },
+                // to get responce from a server
+                success: function(data){
+                    $('.messages').html(data.reset);
+                }
+            })
         });
     });
 </script>
